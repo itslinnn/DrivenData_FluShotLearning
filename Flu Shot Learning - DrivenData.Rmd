@@ -108,6 +108,9 @@ confusionMatrix(nbFitted_a, train_a$h1n1_vaccine, positive="1")
 nbPredict_a = predict(nb_a, type="class", newdata=test_a)
 confusionMatrix(nbPredict_a, test_a$h1n1_vaccine, positive="1")
 ```
+```{r}
+PCA_a=prcomp(train_a[,],scale=TRUE)
+```
 
 ### Model B
 ```{r}
@@ -134,6 +137,10 @@ auc <- auc@y.values[[1]]
 auc
 ```
 
+
+
+
+# Prediction
 
 ```{r}
 predict_a = predict(nb_a, type="raw", newdata=test_features)[,2]
